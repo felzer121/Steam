@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-button-auth',
@@ -7,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonAuthComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
   auth() {
-    document.location.href="https://localhost:5001/identity/login";
+    this.http.get('https://localhost:5001/test', { withCredentials: true });
   }
 }

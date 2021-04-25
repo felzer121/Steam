@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { TopMenuComponent } from './components/header/top-menu/top-menu.component';
 import { BottomMenuComponent } from './components/header/bottom-menu/bottom-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
@@ -43,6 +44,7 @@ import { CrashScheduleComponent } from './components/dota/crash-schedule/crash-s
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     MatDialogModule,
     BrowserAnimationsModule,
