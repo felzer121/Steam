@@ -1,0 +1,48 @@
+app-select-language {
+  margin-left: 20px;
+  max-width: 44px;
+  overflow: hidden;
+  background: #3F3E5F;
+  box-shadow: 4px 4px 4px rgb(0 0 0 / 5%), -4px -4px 4px rgb(190 200 204 / 3%);
+  border-radius: 4px;
+  & .mat-form-field-wrapper, & .mat-form-field, & .mat-form-field-flex {
+    height: 100%;
+  }
+  & .mat-form-field-underline, & .mat-form-field-appearance-fill .mat-select-arrow-wrapper {
+    display: none;
+  }
+  & app-select-language {
+    margin-left: 20px;
+    max-width: 44px;
+    overflow: hidden;
+    background: #3F3E5F;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 5%), -4px -4px 4px rgb(190 200 204 / 3%);
+    border-radius: 4px;
+  }
+  & .mat-form-field-appearance-fill .mat-form-field-infix {
+    border-top: .4em solid transparent;
+  }
+  & .mat-form-field-appearance-fill .mat-form-field-flex {
+    border-radius: 4px 4px 0 0;
+    padding: .75em .75em 0 .85em;
+  }
+  & .mat-option-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.mat-select-panel {
+  background-color: #282840;
+  max-width: 20px!important;
+}
+.mat-option {
+  background-color: #3F3E5F;
+}
+.mat-option.mat-active {
+  background-color: #282840;
+}
+.languageItem > span{
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,247 @@
+.crashController {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3), -4px -4px 6px rgba(190, 200, 204, 0.2);
+  border-radius: 4px;
+  padding: 20px;
+  box-sizing: border-box;
+  &__ui {
+    display: flex;
+    justify-content: space-between;
+    img {
+      max-width: 180px;
+    }
+  }
+  &__loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 368px);
+  }
+  &__controller {
+    width: 100%;
+    max-width: 368px;
+  }
+  &__result {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    &Box {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 80px;
+      background: rgba(53, 55, 74, 0.8);
+      box-shadow: -4px -4px 4px rgba(190, 200, 204, 0.03), 4px 4px 4px rgba(0, 0, 0, 0.07);
+      border-radius: 4px;
+      font-family: Lack, sans-serif;
+      text-align: center;
+      text-transform: uppercase;
+      color: #BEBEBE;
+      img {
+        position: absolute;
+        left: -13px;
+        top: -10px;
+      }
+    }
+    &Number {
+      font-size: 22px;
+    }
+    &Info {
+      font-size: 16px;
+    }
+  }
+  &__rate {
+    &Box {
+      display: flex;
+      justify-content: space-between;
+      padding: 9px;
+      box-sizing: border-box;
+      margin-top: 18px;
+      background: rgba(53, 55, 74, 0.8);
+      box-shadow: -4px -4px 4px rgba(190, 200, 204, 0.03), 4px 4px 4px rgba(0, 0, 0, 0.07);
+      border-radius: 4px;
+    }
+    &Controller {
+      border: none;
+      height: 38px;
+      background: rgba(78, 128, 186, 0.4);
+      box-shadow: -4px -4px 4px rgba(190, 200, 204, 0.05), 4px 4px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+    }
+    &Settings {
+      min-width: 38px;
+      padding: 0;
+    }
+    &Input {
+      max-width: 70px;
+      width: 100%;
+    }
+    &Start {
+      margin-top: 18px;
+      display: flex;
+      &InputButton {
+        height: 100%;
+        padding: 0;
+      }
+      &ButtonContainer{
+        margin-left: 18px;
+        width: 100%;
+        height: 60px;
+      }
+      &ButtonTxt{
+        text-transform: uppercase;
+        color: #FFFFFF;
+        width: 100%;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      &Button{
+        background: linear-gradient(322.55deg, #598E67 25.61%, #A8B15E 100.93%);
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05), 4px 4px 4px rgba(0, 0, 0, 0.05), -4px -4px 4px rgba(190, 200, 204, 0.05);
+        border-radius: 4px;
+        width: 100%;
+        height: 100%;
+        & .mat-button-wrapper {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+      &InputContainer {
+        max-width: 90px;
+        width: 100%;
+        height: 60px;
+        background: rgba(53, 55, 74, 0.8);
+        box-shadow: -4px -4px 4px rgba(190, 200, 204, 0.03), 4px 4px 4px rgba(0, 0, 0, 0.07);
+        border-radius: 4px;
+        input {
+          width: 100%;
+          height: 100%;
+          background: transparent;
+          outline: none;
+          border: none;
+          text-align: center;
+          font-size: 28px;
+          color: #BEBEBE;
+        }
+      }
+    }
+  }
+  &__table {
+    &Title {
+      margin: 26px 0 16px 0;
+      display: flex;
+      width: 100%;
+      height: 80px;
+      background: rgba(53, 55, 74, 0.8);
+      border: 1px solid #2C2C3A;
+      box-sizing: border-box;
+      box-shadow: -4px -4px 4px rgba(190, 200, 204, 0.03), 4px 4px 4px rgba(0, 0, 0, 0.07);
+      border-radius: 4px;
+      &Box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        max-width: 145px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      &Txt {
+        text-transform: uppercase;
+        font-family: Lack, sans-serif;
+        font-size: 18px;
+        color: #BEBEBE;
+        position: absolute;
+        margin: 0;
+      }
+    }
+    &TitleItem {
+      display: flex;
+    }
+    &TitleItem:not(:last-child) {
+      margin-right: 35px;
+    }
+    &Info {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      padding-right: 20px;
+    }
+    &Span {
+      margin-left: 10px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+    &Txt {
+      font-family: Lack, sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #BEBEBE;
+    }
+    &Number {
+      font-family: Lack, sans-serif;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+    &Item {
+      background: rgba(53, 55, 74, 0.8);
+      border: 1px solid rgba(78, 128, 186, 0.2);
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: -4px -4px 4px rgba(190, 200, 204, 0.03), 4px 4px 4px rgba(0, 0, 0, 0.07);
+      border-radius: 4px;
+      height: 50px;
+      &Prev {
+        display: flex;
+        align-items: center;
+        &Rate {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 13px;
+          background: rgba(78, 128, 186, 0.2);
+          box-shadow: -4px -4px 4px rgba(190, 200, 204, 0.03), 4px 4px 4px rgba(0, 0, 0, 0.07);
+          border-radius: 4px;
+          height: 34px;
+          &Span {
+            font-family: Lack, sans-serif;
+            letter-spacing: .1em;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+          }
+        }
+        &Skins {
+          margin-left: 15px;
+          display: flex;
+        }
+      }
+      &Last {
+      }
+      &Status {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 24px;
+        height: 34px;
+        margin-right: 8px;
+        background: rgba(78, 128, 186, 0.2);
+        box-shadow: -4px -4px 4px rgba(190, 200, 204, 0.05), 4px 4px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+      }
+    }
+  }
+}

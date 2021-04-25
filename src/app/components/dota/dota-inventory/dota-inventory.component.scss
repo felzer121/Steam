@@ -1,0 +1,29 @@
+.dotaInventory {
+  width: 100%;
+  height: 100%;
+  max-height: calc(100% - 470px);
+  margin-top: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3), -4px -4px 6px rgba(190, 200, 204, 0.2);
+  border-radius: 4px;
+  &__lock {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__lockInfo {
+    font-family: Lack, sans-serif;
+    max-width: 251px;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #616989;
+  }
+  &__lockIcon {
+    opacity: .6;
+    margin-bottom: 12px;
+  }
+}

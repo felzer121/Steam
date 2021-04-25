@@ -1,0 +1,14 @@
+.dota {
+  padding: 20px;
+  display: flex;
+  height: 100%;
+  box-sizing: border-box;
+  background-image: url("../../../assets/DotaFon.jpg");
+  background-size: cover;
+}
+app-crash-controller {
+  width: calc(100% - 820px);
+  min-width: 660px;
+  height: 100%;
+  margin-left: 20px;
+}

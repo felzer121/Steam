@@ -1,0 +1,15 @@
+<div class="container">
+  <app-header role="heading"></app-header>
+  <div class="content" role="main">
+    <mat-sidenav-container class="sidenav-container">
+      <mat-sidenav #sidenav mode="side" position="end" opened>
+        <app-chat></app-chat>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>
+
+

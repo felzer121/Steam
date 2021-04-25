@@ -1,0 +1,32 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 380px;
+  height: 100%;
+  background-image: url("../../../assets/chat-fon.jpg");
+  &__send {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  &__form{
+    padding: 0 0 0 24px;
+    color: #FFFFFF;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__placeholder {
+    color: #9B9B9B;
+  }
+  &__buttonSend {
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+  .mat-form-field-underline {
+    display: none;
+  }
+}

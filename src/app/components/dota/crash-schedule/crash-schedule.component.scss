@@ -1,0 +1,37 @@
+.dota__crash {
+  position: relative;
+  max-width: 800px;
+  height: 450px;
+  filter: drop-shadow(-4px -4px 4px rgba(190, 200, 204, 0.2));
+  border-radius: 4px;
+  &Title {
+    margin-bottom: 20px;
+  }
+  video {
+    border-radius: 4px;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3));
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &ScheduleContainer {
+    position: absolute;
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    right: 40px;
+    top: 0;
+    height: 100%;
+  }
+  &Schedule {
+    width: 100%;
+    height: 315px;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: -4px -4px 4px rgba(190, 200, 204, 0.1), 4px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 20px 25px;
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,14 @@
+.container {
+  max-height: 100vh;
+  height: 100%;
+  overflow: hidden;
+}
+.content {
+  height: calc(100% - 120px);
+}
+.sidenav-container {
+  height: 100%;
+}
+.mat-drawer-side.mat-drawer-end {
+  border: none;
+}
