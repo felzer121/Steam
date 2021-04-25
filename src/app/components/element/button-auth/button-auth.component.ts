@@ -14,6 +14,6 @@ export class ButtonAuthComponent implements OnInit {
   }
 
   auth() {
-    this.http.get('https://localhost:5001/test', { withCredentials: true });
+    this.http.get('http://localhost:5000/test', { withCredentials: true }).subscribe(r => console.log(r));
   }
 }
