@@ -8,6 +8,7 @@ import { TopMenuComponent } from './components/header/top-menu/top-menu.componen
 import { BottomMenuComponent } from './components/header/bottom-menu/bottom-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+// @ts-ignore
 import { AuthModule, OidcConfigService, LogLevel } from 'angular-auth-oidc-client';
 
 import { MatDialogModule } from '@angular/material/dialog';
@@ -27,6 +28,7 @@ import { CrashControllerComponent } from './components/dota/crash-controller/cra
 import { DotaInventoryComponent } from './components/dota/dota-inventory/dota-inventory.component';
 import { ButtonAuthComponent } from './components/element/button-auth/button-auth.component';
 import { CrashScheduleComponent } from './components/dota/crash-schedule/crash-schedule.component';
+import { MessageComponent } from './components/chat/message/message.component';
 
 export function configureAuth(oidcConfigService: OidcConfigService): any {
   return () =>
@@ -58,7 +60,8 @@ export function configureAuth(oidcConfigService: OidcConfigService): any {
     CrashControllerComponent,
     DotaInventoryComponent,
     ButtonAuthComponent,
-    CrashScheduleComponent
+    CrashScheduleComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
