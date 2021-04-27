@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -7,7 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { TopMenuComponent } from './components/header/top-menu/top-menu.component';
 import { BottomMenuComponent } from './components/header/bottom-menu/bottom-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AuthModule, OidcConfigService, LogLevel } from 'angular-auth-oidc-client';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
@@ -26,6 +27,23 @@ import { CrashControllerComponent } from './components/dota/crash-controller/cra
 import { DotaInventoryComponent } from './components/dota/dota-inventory/dota-inventory.component';
 import { ButtonAuthComponent } from './components/element/button-auth/button-auth.component';
 import { CrashScheduleComponent } from './components/dota/crash-schedule/crash-schedule.component';
+
+export function configureAuth(oidcConfigService: OidcConfigService): any {
+  return () =>
+      oidcConfigService.withConfig({
+          stsServer: 'https://localhost:5001',
+          redirectUrl: window.location.origin,
+          postLogoutRedirectUri: window.location.origin,
+          clientId: 'angular_client',
+          scope: 'openid',
+          responseType: 'code',
+          silentRenew: true,
+          renewTimeBeforeTokenExpiresInSeconds: 10,
+          useRefreshToken: true,
+          autoUserinfo: false,
+          logLevel: LogLevel.Debug,
+      });
+}
 
 @NgModule({
   declarations: [
@@ -56,8 +74,17 @@ import { CrashScheduleComponent } from './components/dota/crash-schedule/crash-s
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    AuthModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    OidcConfigService,
+      {
+          provide: APP_INITIALIZER,
+          useFactory: configureAuth,
+          deps: [OidcConfigService, HttpClient],
+          multi: true,
+      }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
