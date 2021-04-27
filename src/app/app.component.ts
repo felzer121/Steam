@@ -31,13 +31,10 @@ export class AppComponent {
   }
 
   login(): void {
-    console.log('start login');
-
     this.oidcSecurityService.authorize();
   }
 
   refreshSession(): void {
-      console.log('start refreshSession');
       this.oidcSecurityService.authorize();
   }
 

@@ -3,5 +3,11 @@
     <img class="dotaInventory__lockIcon" src="assets/lock.svg" alt="">
     <app-button-auth></app-button-auth>
     <span class="dotaInventory__lockInfo">Авторизуйтесь чтобы увидеть инвентарь</span>
+    <tr style="height:20px;" *ngFor="let inv of inventory" >
+      <td>
+          <a>{{inv?.status}}</a>
+          <a>{{inv?.numBackpackSlots}}</a>
+      </td>
+    </tr>
   </div>
 </div>

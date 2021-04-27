@@ -37,7 +37,7 @@ export function configureAuth(oidcConfigService: OidcConfigService): any {
           clientId: 'angular_client',
           scope: 'openid',
           responseType: 'code',
-          silentRenew: true,
+          silentRenew: false,
           renewTimeBeforeTokenExpiresInSeconds: 10,
           useRefreshToken: true,
           autoUserinfo: false,
