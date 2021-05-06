@@ -14,24 +14,23 @@ export class DotaInventoryComponent implements OnInit {
   private headers: HttpHeaders = new HttpHeaders();
   inventory: Inventory[] = [];
   isAuthenticated$: Observable<boolean>;
-
+  testData: string = '';
   constructor(private http: HttpClient, private securityService: OidcSecurityService) { 
     this.isAuthenticated$ = this.securityService.isAuthenticated$;
   }
 
   ngOnInit(): void {
     this.isAuthenticated$.pipe(
-      switchMap((isAuthorized: boolean) => this.getAll(isAuthorized))
+      switchMap((isAuthorized: boolean) => this.test(isAuthorized))
     )
       .subscribe(
-        data => this.inventory = data
+        data => this.testData
       )
   }
-
-  private getAll = (isAuthenticated: boolean): Observable<Inventory[]> => {
+  private test = (isAuthenticated: boolean): Observable<string> => {
     this.setHeaders();
-
-    let response =  this.http.get<Inventory[]>("https://localhost:5001/inventory/steamId?steamId=76561198881491957", { headers: this.headers });
+    let response = this.http.get<string>("https://localhost:5001/test", { headers: this.headers});
+    this.http.get('https://localhost:5001/user/validate', {headers: this.headers}).subscribe(r => console.log(r));
 
     return response;
   }
