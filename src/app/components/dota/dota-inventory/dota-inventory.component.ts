@@ -27,10 +27,9 @@ export class DotaInventoryComponent implements OnInit {
         data => this.testData
       )
   }
-  private test = (isAuthenticated: boolean): Observable<string> => {
+  private test = (isAuthenticated: boolean): Observable<object> => {
     this.setHeaders();
-    let response = this.http.get<string>("https://localhost:5001/test", { headers: this.headers});
-    this.http.get('https://localhost:5001/user/validate', {headers: this.headers}).subscribe(r => console.log(r));
+    let response = this.http.get<object>('https://localhost:5001/user', {headers: this.headers});
 
     return response;
   }
