@@ -42,7 +42,7 @@ export function configureAuth(oidcConfigService: OidcConfigService): any {
           silentRenew: false,
           renewTimeBeforeTokenExpiresInSeconds: 10,
           useRefreshToken: true,
-          autoUserinfo: false,
+          autoUserinfo: true,
           logLevel: LogLevel.Debug,
       });
 }

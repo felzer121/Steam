@@ -16,5 +16,7 @@ export class ButtonAuthComponent implements OnInit {
 
   auth() {
     this.securityService.authorize();
+    let a = this.securityService.getPayloadFromIdToken();
+    console.log(a);
   }
 }
