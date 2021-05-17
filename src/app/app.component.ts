@@ -11,7 +11,7 @@ import { OidcSecurityService } from 'angular-auth-oidc-client';
 export class AppComponent {
   title = 'crash';
   userData$: Observable<any> | undefined;
-  isAuthenticated = false;
+
 
   // @ts-ignore
   @ViewChild('sidenav', {static: true}) public sidenav: MatSidenav;
@@ -20,14 +20,8 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    console.log("SSS"+ this.sidenav);
     this.sidenavService.setSidenav(this.sidenav);
     this.userData$ = this.oidcSecurityService.userData$;
-
-    this.oidcSecurityService.checkAuth().subscribe((isAuthenticated) => {
-        this.isAuthenticated = isAuthenticated;
-        console.log('app authenticated', isAuthenticated);
-    });
   }
 
   login(): void {

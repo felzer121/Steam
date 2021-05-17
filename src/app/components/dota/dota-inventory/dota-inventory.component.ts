@@ -15,7 +15,7 @@ export class DotaInventoryComponent implements OnInit {
   inventory: Inventory[] = [];
   isAuthenticated$: Observable<boolean>;
   testData: string = '';
-  constructor(private http: HttpClient, private securityService: OidcSecurityService) { 
+  constructor(private http: HttpClient, private securityService: OidcSecurityService) {
     this.isAuthenticated$ = this.securityService.isAuthenticated$;
   }
 

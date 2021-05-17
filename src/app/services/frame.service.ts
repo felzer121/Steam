@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {MatSidenav, MatSidenavModule} from '@angular/material/sidenav';
+import { OidcSecurityService } from 'angular-auth-oidc-client';
 
 @Injectable({
   providedIn: 'root'
@@ -20,13 +21,11 @@ export class FrameServicee {
     return this.sidenav.open();
   }
 
-
   public close() {
     return this.sidenav.close();
   }
 
   public toggle() {
-    console.log(this.sidenav);
     return this.sidenav.toggle();
   }
 }
