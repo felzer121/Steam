@@ -1,5 +1,5 @@
 <div class="dotaInventory">
-  <div class="dotaInventory__lock">
+  <div *ngIf="!isAuthenticated" class="dotaInventory__lock">
     <img class="dotaInventory__lockIcon" src="assets/lock.svg" alt="">
     <app-button-auth></app-button-auth>
     <span class="dotaInventory__lockInfo">Авторизуйтесь чтобы увидеть инвентарь</span>

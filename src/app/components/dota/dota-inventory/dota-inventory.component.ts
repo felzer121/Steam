@@ -4,6 +4,7 @@ import { OidcSecurityService } from 'angular-auth-oidc-client';
 import { Observable } from 'rxjs';
 import Inventory from 'src/app/models/Inventory';
 import { switchMap } from 'rxjs/operators';
+import { SteamAuthService } from 'src/app/services/steam-auth.service';
 
 @Component({
   selector: 'app-dota-inventory',
@@ -13,20 +14,15 @@ import { switchMap } from 'rxjs/operators';
 export class DotaInventoryComponent implements OnInit {
   private headers: HttpHeaders = new HttpHeaders();
   inventory: Inventory[] = [];
-  isAuthenticated$: Observable<boolean>;
+  isAuthenticated: boolean;
   testData: string = '';
-  constructor(private http: HttpClient, private securityService: OidcSecurityService) {
-    this.isAuthenticated$ = this.securityService.isAuthenticated$;
+  constructor(private http: HttpClient, private securityService: OidcSecurityService, private authService: SteamAuthService) {
+    this.isAuthenticated = authService.isAuthenticated;
   }
 
   ngOnInit(): void {
-    this.isAuthenticated$.pipe(
-      switchMap((isAuthorized: boolean) => this.test(isAuthorized))
-    )
-      .subscribe(
-        data => this.testData
-      )
   }
+
   private test = (isAuthenticated: boolean): Observable<object> => {
     this.setHeaders();
     let response = this.http.get<object>('https://localhost:5001/user', {headers: this.headers});
